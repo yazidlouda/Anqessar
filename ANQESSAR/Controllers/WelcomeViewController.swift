@@ -13,7 +13,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = "ANQESSAR"
+        titleLabel.text = K.title
         
         
 //        titleLabel.text = ""

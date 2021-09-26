@@ -19,6 +19,10 @@
 		F4DE0FB026FE636200AF6246 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE0FAF26FE636200AF6246 /* LoginViewController.swift */; };
 		F4DE0FB326FE637200AF6246 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE0FB226FE637200AF6246 /* ChatViewController.swift */; };
 		F4DE0FBD26FE75C500AF6246 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DE0FBC26FE75C400AF6246 /* GoogleService-Info.plist */; };
+		F4DE0FD326FEC24500AF6246 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE0FD226FEC24500AF6246 /* Constants.swift */; };
+		F4DE0FD626FEC42900AF6246 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE0FD526FEC42900AF6246 /* Message.swift */; };
+		F4DE0FDA26FEC93500AF6246 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE0FD826FEC93500AF6246 /* MessageCell.swift */; };
+		F4DE0FDB26FEC93500AF6246 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DE0FD926FEC93500AF6246 /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		F4DE0FAF26FE636200AF6246 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4DE0FB226FE637200AF6246 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F4DE0FBC26FE75C400AF6246 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4DE0FD226FEC24500AF6246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4DE0FD526FEC42900AF6246 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F4DE0FD826FEC93500AF6246 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		F4DE0FD926FEC93500AF6246 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 				F4DE0F9E26FE60AC00AF6246 /* Info.plist */,
 				F4DE0FBC26FE75C400AF6246 /* GoogleService-Info.plist */,
 				F4DE0F9626FE608C00AF6246 /* ANQESSAR.xcdatamodeld */,
+				F4DE0FD226FEC24500AF6246 /* Constants.swift */,
 			);
 			path = ANQESSAR;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 		F4DE0FA526FE630F00AF6246 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4DE0FD526FEC42900AF6246 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				F4DE0F9326FE608B00AF6246 /* Main.storyboard */,
+				F4DE0FD826FEC93500AF6246 /* MessageCell.swift */,
+				F4DE0FD926FEC93500AF6246 /* MessageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DE0FDB26FEC93500AF6246 /* MessageCell.xib in Resources */,
 				F4DE0F9D26FE60AC00AF6246 /* LaunchScreen.storyboard in Resources */,
 				F4DE0FBD26FE75C500AF6246 /* GoogleService-Info.plist in Resources */,
 				F4DE0F9A26FE60AC00AF6246 /* Assets.xcassets in Resources */,
@@ -246,12 +259,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DE0FB026FE636200AF6246 /* LoginViewController.swift in Sources */,
+				F4DE0FDA26FEC93500AF6246 /* MessageCell.swift in Sources */,
 				F4DE0FB326FE637200AF6246 /* ChatViewController.swift in Sources */,
 				F4DE0FA926FE634200AF6246 /* WelcomeViewController.swift in Sources */,
+				F4DE0FD626FEC42900AF6246 /* Message.swift in Sources */,
 				F4DE0F8E26FE608B00AF6246 /* AppDelegate.swift in Sources */,
 				F4DE0FAD26FE635000AF6246 /* RegisterViewController.swift in Sources */,
 				F4DE0F9026FE608B00AF6246 /* SceneDelegate.swift in Sources */,
 				F4DE0F9826FE608C00AF6246 /* ANQESSAR.xcdatamodeld in Sources */,
+				F4DE0FD326FEC24500AF6246 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
