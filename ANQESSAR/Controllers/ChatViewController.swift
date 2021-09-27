@@ -29,8 +29,11 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages(){
-        messages = []
-        db.collection(K.FStore.collectionName).addSnapshotListener{ [self] (querySnapshot, error) in
+        
+        db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener{ [self] (querySnapshot, error) in
+            self.messages = []
             if let e = error{
                 print ("The error is", "\(e)")
             }else {
@@ -56,11 +59,14 @@ class ChatViewController: UIViewController {
     @IBAction func sendPressed(_ sender: Any) {
         
         if let messageBody = messageTextField.text , let messageSender = Auth.auth().currentUser?.email{
-            db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.senderField : messageSender, K.FStore.bodyField : messageBody]) { (error) in
+            db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.senderField : messageSender,
+                                                                      K.FStore.bodyField : messageBody,
+                                                                      K.FStore.dateField: Date().timeIntervalSince1970]) { (error) in
                 if let e = error {
                     print("the error is", "\(e)")
                 }else{
                     print("Data saved")
+                    self.messageTextField.text = ""
                 }
             }
             
@@ -92,6 +98,21 @@ extension ChatViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
         cell.label?.text = messages[indexPath.row].body
+        
+        let message = messages[indexPath.row]
+        if message.sender == Auth.auth().currentUser?.email{
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+           // cell.messageBubble.backgroundColor = UIColor.lighy
+            cell.label.textColor = UIColor.purple
+            cell.label.textAlignment = .right
+        }
+        else{
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor.purple
+            cell.label.textColor = UIColor.lightGray
+        }
         //cell.messageBubble.backgroundColor = .blue
         return cell
         
